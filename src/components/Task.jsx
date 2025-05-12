@@ -22,7 +22,10 @@ export const Task = ({ task, onDelete, onChecked }) => {
         <p>{task.taskName}</p>
       </div>
       <div>
-        <button onClick={() => onDelete(task.id)} className="deleteButton">
+        <button
+          onClick={() => onDelete(task.id)}
+          className={styles.deleteButton}
+        >
           Delete
         </button>
       </div>

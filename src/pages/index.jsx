@@ -61,6 +61,7 @@ export default function Home() {
           onChecked={onChecked}
         />
       ))}
+      <div>Powered by blah2</div>
     </div>
   );
 }

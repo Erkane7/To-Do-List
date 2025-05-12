@@ -27,6 +27,8 @@ export const Task = ({ task, onDelete, onChecked }) => {
       </div>
       <div>
         <div>Powered by blah2</div>
+        <div>Powered by blah2</div>
+        <div>Powered by blah2</div>
       </div>
     </div>
   );

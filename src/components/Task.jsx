@@ -25,6 +25,9 @@ export const Task = ({ task, onDelete, onChecked }) => {
           Delete
         </button>
       </div>
+      <div>
+        <div>Powered by blah2</div>
+      </div>
     </div>
   );
 };

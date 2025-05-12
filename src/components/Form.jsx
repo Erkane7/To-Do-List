@@ -2,9 +2,14 @@ import { useState } from "react";
 import styles from "./styles/Form.module.css";
 import { RedirectType } from "next/navigation";
 
-export const Form = ({ setTaskList, taskList }) => {
+export const Form = ({
+  setTaskList,
+  taskList,
+  allTask,
+  activeTask,
+  completedTask,
+}) => {
   const [inputValue, setInputValue] = useState("");
-
   const handleChange = (e) => {
     setInputValue(e.target.value);
   };
@@ -21,12 +26,9 @@ export const Form = ({ setTaskList, taskList }) => {
     if (taskList.some((task) => task.taskName === inputValue)) {
       alert("Task alreadt existsss!");
     }
-
     setTaskList([...taskList, newTask]);
     setInputValue("");
   };
-
-
   return (
     <div className={styles.container}>
       <div>
@@ -36,8 +38,6 @@ export const Form = ({ setTaskList, taskList }) => {
           className={styles.taskInput}
           onChange={handleChange}
         />
-      </div>
-      <div>
         <button className={styles.taskAddButton} onClick={handleAdd}>
           Add
         </button>

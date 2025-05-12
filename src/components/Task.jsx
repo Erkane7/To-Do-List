@@ -1,19 +1,6 @@
 import { useState } from "react";
 
-const toggleTask = (id) => {
-  const updateTask = newTask.map((task) => {
-    if (task.id !== id) {
-      return task;
-    }
-    const updateTask = {
-      ...task,
-      isCompleted: !task.isCompleted,
-    };
-    return updateTask;
-  });
-};
-
-export const Task = ({ task, onDelete }) => {
+export const Task = ({ task, onDelete, onChecked }) => {
   return (
     <div
       style={{
@@ -26,7 +13,11 @@ export const Task = ({ task, onDelete }) => {
       }}
     >
       <div style={{ display: "flex", gap: "20px", alignItems: "center" }}>
-        <input type="checkbox" />
+        <input
+          onChange={() => onChecked(task.id)}
+          type="checkbox"
+          checked={task.isCompleted}
+        />
         <p>{task.taskName}</p>
       </div>
       <div>
